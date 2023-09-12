@@ -12,89 +12,104 @@ code {
     monospace;
 }
 
-/* src/components/EmployeeForm.css */
-/* src/components/EmployeeForm.css */
+
+/* EmployeeForm.css */
+
 .form-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .form-title {
-  text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
-  color: #007bff; /* Blue color from the mockup */
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-row {
-  display: flex;
-  justify-content: space-between;
 }
 
 .form-group {
+  display: flex;
+  flex-direction: row; /* Display labels and inputs in a row */
+  align-items: center; /* Center vertically */
   margin-bottom: 20px;
 }
 
-label {
+.form-group label {
   font-weight: bold;
-  font-size: 16px;
-  color: #333; /* Dark text color from the mockup */
+  width: 150px; /* Adjust the width based on your design */
+  margin-right: 10px; /* Add spacing between label and input */
 }
 
-input[type="text"],
-input[type="date"],
-input[type="number"],
-textarea {
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"] {
+  flex: 1; /* Expand input to fill remaining space */
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
   font-size: 16px;
-  color: #555; /* Text color from the mockup */
+}
+
+.form-group .quill {
+  flex: 1; /* Expand Quill input to fill remaining space */
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
 }
 
 .button-group {
-  display: flex;
-  justify-content: center; /* Center the buttons horizontally */
+  text-align: center;
   margin-top: 20px;
 }
 
-.cancel-button {
-  background-color: #ccc; /* Light gray color */
-  color: #333; /* Dark text color */
-  border: none;
+.cancel-button,
+.save-button {
   padding: 10px 20px;
-  border-radius: 5px;
   font-size: 16px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  margin-right: 10px;
-  transition: background-color 0.3s ease;
 }
 
-.cancel-button:hover {
-  background-color: #999; /* Slightly darker gray on hover */
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #333;
+  margin-right: 10px;
 }
 
 .save-button {
-  background-color: #007bff; /* Blue color */
-  color: #fff; /* White text color */
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #007BFF;
+  color: #fff;
 }
 
-.save-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+/* EmployeeList.css */
+
+/* Style for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for table headers */
+th {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style for table rows */
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+/* Style for table data cells */
+td {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
 }
