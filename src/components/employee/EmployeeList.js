@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import 'font-awesome/css/font-awesome.min.css';
 
-function EmployeeList({ employees }) {
+function EmployeeList({ employees, onView, onEdit, onDelete }) {
   const [editEmployee, setEditEmployee] = useState(null);
   const [viewEmployee, setViewEmployee] = useState(null);
   const [employeeList, setEmployeeList] = useState(employees);
@@ -43,15 +42,10 @@ function EmployeeList({ employees }) {
               <td>{employee.endDate}</td>
               <td>{employee.description}</td>
               <td>
-                <span className="edit-icon" onClick={() => handleEdit(employee)}>
-                  <i className="fas fa-edit"></i>
-                </span>
-                <span className="view-icon" onClick={() => handleView(employee)}>
-                  <i className="fas fa-eye"></i>
-                </span>
-                <span className="delete-icon" onClick={() => handleDelete(index)}>
-                  <i className="fas fa-trash"></i>
-                </span>
+                {/* Add buttons for view, edit, and delete actions */}
+                <button onClick={() => onView(employee)}>View</button>
+                <button onClick={() => onEdit(employee)}>Edit</button>
+                <button onClick={() => onDelete(index)}>Delete</button>
               </td>
             </tr>
           ))}
